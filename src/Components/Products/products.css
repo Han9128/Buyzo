@@ -1,0 +1,51 @@
+
+.products-container{
+    margin: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3,250px);
+    gap: 1.5rem;
+    /* grid-template-rows: repeat(1fr,1fr); */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+
+.products-card img{
+    /* to use object fit we have to set width and height */
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 0px 0px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+}
+
+.products-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border);
+}
+
+.btn{
+    padding: 0.6rem;
+    background-color: var(--accent);
+    border-radius: 20px;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.products-card p{
+    font-size: 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--primary);
+}
+
+.btn:hover{
+    background-color: var(--surface);
+}
+

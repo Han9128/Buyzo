@@ -1,9 +1,14 @@
 
+import React from "react";
+import Header from './Components/Header/Header';
+import "./index.css"
+import Prodcuts from "./Components/Products/Products";
 
 function App() {
   return (
     <div>
-      <h1>React Store</h1>
+      <Header />
+      <Prodcuts />
     </div>
   );
 }

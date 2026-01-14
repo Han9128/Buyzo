@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "name": "Black Tshirt",
+        "image": "black_tshirt.jpg"
+    },
+    {
+        "id":2,
+        "name": "Black Trouser",
+        "image": "black_trouser.jpg"
+    },
+    {
+        "id":3,
+        "name": "Black Hoodie",
+        "image": "black_hoodie.jpg"
+    },
+    {
+        "id":4,
+        "name": "Black Kurta",
+        "image": "black_kurta.jpg"
+    },
+     {
+        "id":5,
+        "name": "Black Burqa",
+        "image": "black_burqa.jpg"
+    },
+     {
+        "id":6,
+        "name": "White Shoe",
+        "image": "white_shoe.jpg"
+    }
+
+]
+
