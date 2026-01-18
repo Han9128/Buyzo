@@ -46,7 +46,7 @@ git clone https://github.com/Han9128/Buyzo.git
 cd Buyzo
 ```
 
-3. 
+3. Install dependencies:
 ```
 npm install
 ```
