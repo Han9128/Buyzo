@@ -1,25 +1,27 @@
 import React from "react";
-import products from "../../data/products.json"
+
 import "./products.css"
+import Button from "../UI/Button";
 
 
-function Product({image,name}){
+function Product({id,onAddToCart,image,name}){
     return (
         <div className="products-card">
-            <img src={image} alt={name} />
+            <img src={require(`../../assets/images/${image}`)} alt={name}  />
             <p>{name}</p>
-            <button className="btn">Add to Cart</button>
+            <Button variant= "add_to_cart" id={id} image={image} name={name} onClick={onAddToCart}>Add to Cart</Button>
         </div>
     )
 }
 
-function Prodcuts(){
-    console.log(products);
+function Prodcuts({onAddToCart,products}){
+    // console.log(products);
     return (
     <div className="products-container">
             {products.map((prod)=>{
                 return (
-                    <Product image={require(`../../assets/images/${prod.image}`)} name={prod.name}/>
+                    <Product key={prod.id} onAddToCart={onAddToCart} image={prod.image} 
+                    name={prod.name} id={prod.id}/>
                 )
             })}
          </div>

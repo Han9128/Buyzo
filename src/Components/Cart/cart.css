@@ -1,0 +1,124 @@
+.backdrop{
+    /* set the full screen width and height */
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    /* use diplay flex to center modals */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* take out the backdrop from normal flow and put it on top 
+    absolute position when scrolled does not cover bottom part but fixed alwasy stick on screen making 
+    backdrop always present*/
+    position: fixed;
+/* short for top, left, right, bottom:0 */
+    inset: 0;
+    /* z-index: 1; */
+}
+
+.modal{
+    width: 50vw;
+    /* height: 100px; */
+    background-color: var(--surface);
+    color: var(--primary);
+    /* center the model content */
+     display: flex;
+     flex-direction: column;
+
+    border: 3px solid var(--border);
+    border-radius: 3px;
+
+    /* keeps the modal centered even if page scrolls */
+     position: fixed; 
+     /* overflow: hidden; */
+     z-index: 10;
+     max-height: 80vh;
+    
+}
+
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: auto;
+    /* min-height: 0; */
+}
+
+.cart-heading{
+    font-size: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-img img{
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid var(--border);
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    gap: 1rem;
+}
+
+.item-info{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.update-btn {
+    display: flex;
+}
+
+.update-btn .btn{
+    padding: 0.3rem;
+    font-size: 1.2rem;
+    border-radius: 0.4em;
+}
+
+.cart-bottom-btn{
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    border-top: 1ps solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    /* margin-bottom: 1rem; */
+    position: sticky;
+    z-index: 50;
+}
+
+.cart-bottom-btn > :first-of-type{
+    background-color: var(--text-main);
+}
+
+.empty-cart{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+
+
+
+
