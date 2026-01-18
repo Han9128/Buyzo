@@ -23,7 +23,7 @@ function App() {
     } else if (variant == "close_cart") {
       close();
     } else if (variant === "check_out") {
-      console.log(variant)
+      // console.log(variant)
       openCheckOut();
     } else if (variant === "increase_item") {
       handleIncrease(itemId);
@@ -47,12 +47,12 @@ function App() {
   }
 
   function openCheckOut() {
-    console.log(checkOut)
+    // console.log(checkOut)
     setCheckOut(true);
   }
 
   function handleIncrease(itemId){
-    console.log(itemId);
+    // console.log(itemId);
     const prodId = cartProducts.findIndex(item => item.id === itemId);
     const updatedCartProducts = [...cartProducts]
     updatedCartProducts[prodId].qty += 1;
@@ -62,9 +62,9 @@ function App() {
     const prodId = cartProducts.findIndex(item => item.id === itemId);
     let updatedCartProducts = [...cartProducts]
     if(updatedCartProducts[prodId].qty === 1){
-      console.log(updatedCartProducts[prodId].qty)
+      // console.log(updatedCartProducts[prodId].qty)
         updatedCartProducts = updatedCartProducts.filter(item => item.id !== itemId)
-        console.log(updatedCartProducts);
+        // console.log(updatedCartProducts);
     }else{
       updatedCartProducts[prodId] = {
         ...updatedCartProducts[prodId],
