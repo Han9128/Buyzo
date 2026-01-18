@@ -54,25 +54,22 @@ function Cart({children,showCart,onCloseCart,cartProducts, closeCart, onCheckOut
     if(showCheckOut){
       return (<Modal closeCart={closeCart} >
              <div className="payment-gateway">
-        <h3>Payment Options: </h3>
+        <h3>Payment Methods: </h3>
         <ul className="payment-ptions">
           <li className="gateway">
-            <Button>PhonePe</Button>
+            <Button onClick={closeCart}>PhonePe</Button>
           </li>
           <li className="gateway">
-            <Button>PhonePe</Button>
+            <Button onClick={closeCart}>GooglePay</Button>
           </li>
           <li className="gateway">
-            <Button>GooglePay</Button>
+            <Button onClick={closeCart}>AmazonPay</Button>
           </li>
           <li className="gateway">
-            <Button>AmazonPay</Button>
+            <Button onClick={closeCart}>Bank Card</Button>
           </li>
           <li className="gateway">
-            <Button>Bank Card</Button>
-          </li>
-          <li className="gateway">
-            <Button>Cash on Delivery</Button>
+            <Button onClick={closeCart}>Cash on Delivery</Button>
           </li>
         </ul>
       </div>

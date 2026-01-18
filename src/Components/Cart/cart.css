@@ -56,10 +56,8 @@
 }
 
 .item-img img{
-    width: 150px;
+    width: 200px;
     height: 200px;
-    object-fit: cover;
-    object-position: center;
     border: 3px solid var(--border);
 }
 
@@ -116,6 +114,19 @@
     align-items: center;
     gap: 0.5rem;
 }
+
+.payment-gateway{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gateway{
+    display: inline;
+    list-style: none ;
+}
+
 
 
 

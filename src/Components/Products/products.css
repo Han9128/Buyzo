@@ -1,9 +1,9 @@
 
 .products-container{
-    margin: 8rem;
+    margin: 4rem;
     display: grid;
     grid-template-columns: repeat(3,300px);
-    gap: 8rem;
+    gap: 3rem;
     /* grid-template-rows: repeat(1fr,1fr); */
     justify-content: center;
     align-items: center;

@@ -7,6 +7,7 @@ import Prodcuts from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
 import Button from "./Components/UI/Button";
 import AddProduct from "./Components/AddProduct/AddProduct";
+import Footer from "./Components/Footer/Footer";
 
 
 function App() {
@@ -109,6 +110,7 @@ function App() {
     setShowForm(false);
   }
 
+  const currYear = new Date().getFullYear()
   return (
     <div>
       <Header openCart={handleButtonClick} onAddProduct={handleButtonClick} />
@@ -118,7 +120,9 @@ function App() {
         onInc={handleButtonClick} onDec={handleButtonClick}>
       </Cart>
       {showForm && <AddProduct closeCart={close} onProductSubmit= {handleProductSubmit}/>}
+      <Footer />
 
+    
     </div>
   );
 }
