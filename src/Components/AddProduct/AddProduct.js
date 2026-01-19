@@ -1,8 +1,7 @@
 
 import React, { useState } from "react";
-import { useRef } from "react";
+// import { useRef } from "react";
 import Modal from "../UI/Modal";
-import Button from "../UI/Button";
 import "./addproduct.css"
 
 function AddProduct({closeCart, onProductSubmit}){

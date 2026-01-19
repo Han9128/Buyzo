@@ -5,7 +5,6 @@ import "./index.css"
 import initialProducts from "./data/products.json"
 import Prodcuts from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
-import Button from "./Components/UI/Button";
 import AddProduct from "./Components/AddProduct/AddProduct";
 import Footer from "./Components/Footer/Footer";
 
@@ -20,7 +19,7 @@ function App() {
   function handleButtonClick(variant, itemId, itemImageimage, itemName) {
     if (variant === "add_to_cart") {
       handleAddToCart(itemId, itemImageimage, itemName);
-    } else if (variant == "close_cart") {
+    } else if (variant === "close_cart") {
       close();
     } else if (variant === "check_out") {
       // console.log(variant)
@@ -110,7 +109,6 @@ function App() {
     setShowForm(false);
   }
 
-  const currYear = new Date().getFullYear()
   return (
     <div>
       <Header openCart={handleButtonClick} onAddProduct={handleButtonClick} />
