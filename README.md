@@ -59,6 +59,9 @@ npm start
 
 The app should open in your default browser at `http://localhost:3000`
 
+# Live Demo
+See the website live at [Buyzo](https://buyzo-shop.netlify.app/)
+
 # Author
 
 Md Shahreyar Hannan
