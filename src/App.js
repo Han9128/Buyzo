@@ -110,7 +110,12 @@ function App() {
   }
 
   return (
-    <div>
+    // we know that we can return a single element in jsx so we have to wrap everything in div what if we don't want to use div to wrap?
+    // There are two methods:
+    // 1. Use React.fragments
+    // 2. Use empty tag (<> </>)
+    // <React.Fragment>
+    <>
       <Header openCart={handleButtonClick} onAddProduct={handleButtonClick} />
       <Prodcuts onAddToCart={handleButtonClick} products={products} />
       <Cart showCart={showCart} closeCart={close} cartProducts={cartProducts}
@@ -120,8 +125,8 @@ function App() {
       {showForm && <AddProduct closeCart={close} onProductSubmit= {handleProductSubmit}/>}
       <Footer />
 
-    
-    </div>
+    </>
+    // {/* </React.Fragment> */}
   );
 }
 
