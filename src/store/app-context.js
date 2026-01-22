@@ -7,6 +7,7 @@ const AppContext = createContext({
     checkOut:false,
     cartProducts:[],
     showForm:false,
+    loading:false,
     handleButtonClick: () =>{},
     handleAddProducts:() =>{},
     handleAddToCart:() =>{},

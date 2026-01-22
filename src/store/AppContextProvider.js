@@ -1,6 +1,6 @@
 
-import React, {useState} from "react";
-import initialProducts from "../data/products.json"
+import React, {useEffect, useState} from "react";
+// import initialProducts from "../data/products.json"
 import AppContext from "./app-context";
 
 function AppContextProvider({children}){
@@ -8,7 +8,8 @@ function AppContextProvider({children}){
   const [cartProducts, addToCart] = useState([]);
   const [checkOut, setCheckOut] = useState(false);
   const [showForm,setShowForm] = useState(false);
-  const [products,setProducts] = useState(initialProducts);
+  const [products,setProducts] = useState({});
+  const [loading, setLoading] = useState(false);
 
   function handleButtonClick(variant, itemId, itemImageimage, itemName) {
     // console.log(variant);
@@ -99,13 +100,49 @@ function AppContextProvider({children}){
 
   function handleProductSubmit(prodName){
     const newProd = {
-      id:products.length+1,
+      id:Object.keys(products).length+1,
       name: prodName,
       image:"default.png"
     }
-    setProducts([...products,newProd]);
+    sendProduct(newProd);
+    setProducts((prevProducts) => {
+      return {...prevProducts,[Object.keys(prevProducts).length+1]:newProd};
+    });
     setShowForm(false);
   }
+ 
+  const sendProduct = async (prod)=>{
+    const response = await fetch("https://buyzo-df2f8-default-rtdb.firebaseio.com/products.json",{
+      method:"POST",
+      headers:{
+        "content-tyep":"application/json"
+      },
+      body:JSON.stringify(prod)
+    })
+    const data = await response.json();
+    console.log(data);
+  }
+
+  // One question here is that why dont we use directly async in useEffect function why to define another function?
+  // because we want the useEffect to be synchronous thats why we dont directly use asyn in its function 
+  // If we don't provide an empty array dependency then useEffect run for every render which makes it go in infinite loop.
+  useEffect(()=>{
+    const handleFetchData = async ()=>{
+      setLoading(true);
+      try{
+
+        const response = await fetch("https://buyzo-df2f8-default-rtdb.firebaseio.com/products.json")
+        if(!response.ok) throw new Error();
+        const data = await response.json();
+        console.log(data);
+        setProducts(data);
+        setLoading(false);
+      }catch(error){
+        console.log(error);
+      }
+    }
+    handleFetchData();
+  },[])
 
   const appContextValue = {
     showCart,
@@ -113,6 +150,7 @@ function AppContextProvider({children}){
     checkOut,
     cartProducts,
     showForm,
+    loading,
     handleButtonClick,
     handleAddProducts,
     handleAddToCart,

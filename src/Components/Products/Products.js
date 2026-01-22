@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import "./products.css"
 import Button from "../UI/Button";
 import AppContext from "../../store/app-context";
+import Loader from "../UI/Loader";
 
 function Product({id,image,name}){
     return (
@@ -17,15 +18,16 @@ function Product({id,image,name}){
 function Prodcuts(){
     // console.log(products);
     
-const {products} = useContext(AppContext);
+const {products,loading} = useContext(AppContext);
 // console.log(products);
-// console.log("products rendered");
+// console.log("products rendered")
     return (
+        loading ? <Loader/> :
     <div className="products-container">
-            {products.map((prod)=>{
+            {Object.keys(products).map((k)=>{
                 return (
-                    <Product key={prod.id} image={prod.image} 
-                    name={prod.name} id={prod.id}/>
+                    <Product key={k} image={products[k].image} 
+                    name={products[k].name} id={products[k].id}/>
                 )
             })}
          </div>

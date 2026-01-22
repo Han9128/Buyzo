@@ -39,6 +39,7 @@
 }
 
 
+
 @media (max-width:768px){
     .products-container{
         grid-template-columns: repeat(2,200px);
